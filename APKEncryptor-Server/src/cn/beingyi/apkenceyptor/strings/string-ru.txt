@@ -1,0 +1,14 @@
+wrong_account_or_password=неправильно набран номер счёта или пароль
+login_successfully=регистрация прошла успешно
+the_email_you_inputed_already_exists=введённое сообщение уже существует
+the_code_is_invalid_or_wrong=Неверный код или ошибка
+failed_to_signup=срыв регистрации
+signup_successfully=регистрация прошла успешно
+login_failed=Ошибка входа в систему
+the_email_you_inputed_is_not_exists=The Email you inputed is not exists
+failed_to_send_mail=Failed to send mail
+password_modified_successfully=Password modified successfully
+failed_to_modify_password=Failed to modify password
+the_key_does_not_exist=The key does not exist
+key_activated_successfully=Key activated successfully
+you_are_not_a_vip_user=You are not a VIP user

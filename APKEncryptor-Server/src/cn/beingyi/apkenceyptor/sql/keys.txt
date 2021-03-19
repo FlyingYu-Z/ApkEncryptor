@@ -1,0 +1,9 @@
+ID,int(11)
+Key,varchar(255)
+Type,int(1) default '0'
+UserID,varchar(16) default '0'
+isUsed,int(1) default '0'
+Mark,varchar(255)
+CreateTime,datetime
+ActivateTime,datetime
+

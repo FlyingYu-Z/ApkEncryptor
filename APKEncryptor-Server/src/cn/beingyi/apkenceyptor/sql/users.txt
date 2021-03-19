@@ -1,0 +1,13 @@
+ID,int(11)
+Email,varchar(32)
+Password,varchar(32)
+VIP,date
+isLifeTimeVip,int(1) default '0'
+isForbidden,int(1) default '0'
+LoginTime,datetime
+SignupTime,datetime
+LoginIP,varchar(255)
+SignupIP,varchar(255)
+LoginKey,varchar(255)
+
+

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="APKEncryptor-Server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/APKEncryptor_Server_jar</output-path>
+    <root id="archive" name="APKEncryptor-Server.jar">
+      <element id="module-output" name="APKEncryptor-Server" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/json.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/mail.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/activation.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/gson-2.8.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/zip4j-1.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/mysql-connector-java-5.1.39-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

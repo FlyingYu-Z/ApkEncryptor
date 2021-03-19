@@ -1,0 +1,4 @@
+ID,int(11)
+Content,text
+AuthorID,int(11)
+CreateTime,datetime

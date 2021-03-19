@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="encrypt">
+        <item>c语言</item>
+        <item>java </item>
+    </string-array>
+
+
+    <string-array name="language">
+        <item>简体中文(Chinese)</item>
+        <item>English</item>
+        <item>русский(Russian)</item>
+
+    </string-array>
+
+    <string-array name="language_value">
+        <item>zh</item>
+        <item>en</item>
+        <item>ru</item>
+
+    </string-array>
+
+
+</resources>

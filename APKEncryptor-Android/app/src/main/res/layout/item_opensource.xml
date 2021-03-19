@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="10dp">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Name"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textStyle="bold"
+			android:id="@+id/item_open_source_TextView_Name"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="License"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_gravity="right"
+			android:id="@+id/item_open_source_TextView_License"/>
+
+	</FrameLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Url"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_marginTop="10dp"
+		android:id="@+id/item_open_source_TextView_Url"
+		android:singleLine="true"
+		android:textColor="#FF3274D4"
+		android:textStyle="bold"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Description"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_marginTop="10dp"
+		android:id="@+id/item_open_source_TextView_Description"/>
+
+</LinearLayout>
+

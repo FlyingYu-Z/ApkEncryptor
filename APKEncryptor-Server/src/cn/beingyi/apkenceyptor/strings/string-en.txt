@@ -1,0 +1,14 @@
+wrong_account_or_password=Wrong account or password
+login_successfully=Login successfully
+the_email_you_inputed_already_exists=The email you inputed already exists
+the_code_is_invalid_or_wrong=The code is invalid or wrong
+failed_to_signup=Failed to signup
+signup_successfully=Signup successfully
+login_failed=Login failed
+the_email_you_inputed_is_not_exists=The Email you inputed is not exists
+failed_to_send_mail=Failed to send mail
+password_modified_successfully=Password modified successfully
+failed_to_modify_password=Failed to modify password
+the_key_does_not_exist=The key does not exist
+key_activated_successfully=Key activated successfully
+you_are_not_a_vip_user=You are not a VIP user

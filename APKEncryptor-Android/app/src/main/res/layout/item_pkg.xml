@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:text="com.test"
+        android:id="@+id/item_pkg_TextView_pkg"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"/>
+
+    <CheckBox
+        android:id="@+id/item_pkg_CheckBox"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_add_shell"
+        android:icon="@mipmap/ic_add_shell"
+        android:title="@string/encrypt_apk" />
+
+    <item
+        android:id="@+id/navigation_encrypt_string"
+        android:icon="@mipmap/ic_encrypt_string"
+        android:title="@string/string_encryption" />
+
+    <item
+        android:id="@+id/navigation_encrypt_resources"
+        android:icon="@mipmap/ic_encrypt_res"
+        android:title="@string/resource_encryption" />
+
+</menu>

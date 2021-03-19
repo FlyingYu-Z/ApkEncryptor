@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_select_the_package_name_to_be_processed"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/view_tree_pkg_selector_FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/view_tree_pkg_selector_Button_cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="@string/cancel"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/ButtonTheme" />
+
+        <Button
+            android:id="@+id/view_tree_pkg_selector_Button_ok"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="@string/ok"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/ButtonTheme" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

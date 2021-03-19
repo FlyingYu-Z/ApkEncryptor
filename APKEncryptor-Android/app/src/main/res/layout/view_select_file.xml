@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="10dp">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Dir:"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:textStyle="bold"
+		android:id="@+id/view_select_file_TextView_path"/>
+
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="10dp"
+		android:layout_weight="1.0"
+		android:id="@+id/view_select_file_ListView"/>
+
+	<LinearLayout
+		android:id="@+id/view_select_file_LinearLayout_select_file_to_save"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/view_select_file_AppCompatEditText_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"/>
+
+		<TextView
+			android:id="@+id/view_select_file_TextView_suffix"
+			android:layout_marginLeft="5dp"
+			android:textStyle="bold"
+			android:textSize="18sp"
+			android:textColor="@color/black"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

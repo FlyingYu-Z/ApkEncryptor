@@ -1,0 +1,5 @@
+ID,int(11)
+Code,varchar(6)
+Email,varchar(32)
+isUsed,int(1) default '0'
+CreateTime,datetime

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Tools">
+        <menu>
+            <item
+                android:id="@+id/tools_create_keystore"
+                android:icon="@mipmap/ic_keystore"
+                android:title="@string/create_keystore" />
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+
+
+
+        <item
+            android:id="@+id/menu_check_for_updates"
+            android:icon="@mipmap/ic_refresh"
+            android:title="@string/check_for_updates" />
+
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@mipmap/ic_about"
+            android:title="@string/about" />
+
+        <item
+            android:id="@+id/menu_settings"
+            android:icon="@mipmap/ic_settings"
+            android:title="@string/settings" />
+
+
+    </group>
+
+
+
+</menu>

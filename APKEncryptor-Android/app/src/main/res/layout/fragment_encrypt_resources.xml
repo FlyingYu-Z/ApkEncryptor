@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:gravity="center|top">
+
+
+
+    <ProgressBar
+        android:id="@+id/fragment_encrypt_resources_ProgressBar"
+        android:layout_marginTop="20dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/fragment_encrypt_resources_TextView_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0/0" />
+
+
+    <LinearLayout
+        android:id="@+id/fragment_encrypt_resources_LinearLayout_parent"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <ScrollView
+            android:id="@+id/fragment_encrypt_resources_ScrollView_log"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fragment_encrypt_resources_TextView_log"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragment_encrypt_resources_Button_select"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/choose_apk"
+        android:textStyle="bold"
+        android:theme="@style/ButtonTheme" />
+
+
+
+</LinearLayout>

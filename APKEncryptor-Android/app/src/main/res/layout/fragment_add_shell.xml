@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <LinearLayout
+        android:id="@+id/fragment_add_shell_LinearLayout_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxHeight="100dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/fragment_add_shell_TextView_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+
+        <com.fly.apkencryptor.widget.StepLoading
+            android:id="@+id/fragment_add_shell_StepLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="2">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/CheckBox_checkVirtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emulator_check" />
+
+            <CheckBox
+                android:id="@+id/CheckBox_checkXposed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xposed_check" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/CheckBox_checkRoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/root_check" />
+
+            <CheckBox
+                android:id="@+id/CheckBox_checkVPN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vpn_check" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/fragment_add_shell_Button_select"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/choose_apk"
+        android:textStyle="bold"
+        android:theme="@style/ButtonTheme" />
+
+
+</LinearLayout>

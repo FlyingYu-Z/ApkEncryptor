@@ -1,0 +1,202 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "cn.beingyi.apkencryptor"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode Integer.parseInt(getProperty("version.properties","versionCode",false))
+        versionName "2.3"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        flavorDimensions "app"
+
+    }
+    buildToolsVersion '28.0.3'
+
+
+    productFlavors {
+        CoolApk {
+            manifestPlaceholders = [CHANNEL_VALUE: "CoolApk"]
+            applicationId "com.fly.apkencryptor"
+            //resValue "string", "app_name", "APK Encryptor"
+            //resValue "color", "colorPrimary", "#FF00A2E9"
+            buildConfigField "String", "APP_File_Provider", '"com.fly.apkencryptor.fileProvider"'
+            //buildConfigField "String", "Domain", '"bbq.aalyun.cn"'
+
+            manifestPlaceholders = [FILE_PROVIDER: "com.fly.apkencryptor.fileProvider"]
+            minSdkVersion 17
+            targetSdkVersion 28
+            versionCode Integer.parseInt(getProperty("version.properties","versionCode",false))
+            versionName '2.3'
+        }
+
+
+
+    }
+
+
+
+
+        compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    signingConfigs {
+        signConfig {
+            storeFile file('E:\\beingyi.jks')
+            storePassword ""
+            keyAlias "beingyi"
+            keyPassword ""
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+        }
+
+    }
+
+
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
+
+
+    sourceSets {
+        main {
+            java {
+                main {
+                    res.srcDirs = ['src/main/res']
+                    jniLibs.srcDirs = ['src/main/jni']
+                    java.srcDirs = ['src/main/java']
+                    assets.srcDirs = ['src/main/assets']
+                }
+
+            }
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+        ignoreWarnings true
+    }
+
+
+
+
+
+}
+
+
+
+/**
+ * @param filename  要打开的文件名字
+ * @param propName   文件里面的键名字
+ * @param isRootProject   是否用rootProject 文件打开，true 的话，在编译时候可以得到值，打包时候无法得到值。false的话在打包时候可以得到值,编译时候 无法得到值
+ * @return  所选择的文件里面的propName对应的值
+ */
+def getProperty(String filename, String propName,boolean isRootProject) {
+    //在这里 必须是在rootProject.file  如果 file的话 ，编译时候会出错
+    PropertyAdd("version.properties", "versionCode")
+    def propsFile
+    if (isRootProject) {
+        propsFile = rootProject.file(filename)
+    }else {
+        propsFile=file(filename)
+    }
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        if (props[propName] != null) {
+            //下面这个输出在android studio3.1里面 在Build窗口 右边一个锤子下面 toggle哪里，就是原来的message哪里
+            print("getVersionCode "+props[propName])
+            return props[propName]
+        } else {
+            print("No such property " + propName + " in file " + filename);
+        }
+    } else {
+        print(filename + " does not exist!")
+    }
+}
+
+//version.properties  里面的vesioncode自增
+def PropertyAdd(String filename, String propName) {
+    //这里必须用file  如果用rootProject的话 则找不到file为null
+    def propsFile =file(filename)
+    //只有在打正式版的情况下才继续运行，否则退出方法，这样是为了防止 编译时候versionCode 也自增 if里面的参数可以在Build窗口里面 message 最上边[]里面就是
+    def runTasks = gradle.startParameter.taskNames
+    if (!(':app:assembleRelease' in runTasks)) {
+        return
+    }
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        //这里要注意 props[propName] 是String 类型
+        if (props[propName] != null) {
+            def code= (props[propName]).toInteger() //转成Integer
+            props[propName]= (++code).toString()  //自增 且转成String
+        } else {
+            print("No such property " + propName + " in file " + filename);
+        }
+        //在这里提交 对version.properties的更改
+        props.store(propsFile.newWriter(),null)
+    } else {
+        print(filename + " does not exist!")
+    }
+}
+
+//用于生成时间
+def buildTime() {
+    def date = new Date()
+    //yy年 MM月 dd日 HH小时 mm分钟 ss秒
+    def formattedDate = date.format('yyMMdd_HHmm')
+    return formattedDate
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0-alpha1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha1'
+
+
+    implementation 'com.yanzhenjie.permission:x:2.0.1'
+    implementation 'org.xutils:xutils:3.5.0'
+    implementation 'com.tonystark.android:defense_crash:2.0.0'
+    implementation project(':library-TreeView')
+
+
+}
+
+
+
+
+allprojects {
+    repositories {
+        maven { url 'https://dl.bintray.com/xuuhaoo/maven/' }
+        maven { url 'https://jitpack.io' }
+    }
+
+
+}

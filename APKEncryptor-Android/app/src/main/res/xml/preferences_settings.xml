@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen  
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/signature_private_key">
+		<CheckBoxPreference  
+			android:key="useKey"
+            android:title="@string/custom_signature_private_key"
+            android:summary="@string/use_this_private_key_to_sign_APK_after_processing_apk"
+			android:defaultValue="false" />
+
+		<EditTextPreference
+			android:key="confKey"
+			android:title="@string/configure_signature_private_key"/>
+
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/other">
+
+		<ListPreference
+			android:title="@string/language"
+			android:summary="@string/change_the_interface_language_of_software"
+			android:entries="@array/language"
+			android:entryValues="@array/language_value"
+			android:key="pre_settings_language"/>
+	</PreferenceCategory>
+
+</PreferenceScreen>  
